@@ -1,24 +1,17 @@
 # template-readme
 
-![](https://img.shields.io/badge/Uneweb-blue)
-
-# Project Name
-
-> One paragraph statement about the project.
-
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+![Rock Paper Scissors](image.png)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JavaScript
+- VScode
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+This is [Live](https://valerialeonh.github.io/rock_paper_scissors_valerialeon/)
 
 
 ## Getting Started
@@ -41,27 +34,18 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
-
-
 ## Authors
 
-👤 **Arístides José Molina Pérez**
+👤 **Valeria Leon Hung**
 
 - GitHub: [@aValeriaLeonH](https://github.com/ValeriaLeonH)
-- Twitter: [colocartwitter]()
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/valeria-leon-30960527a/)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/ValeriaLeonH/rock_paper_scissors_valerialeon/issues).
 
 ## Show your support
 
