@@ -7,6 +7,7 @@ const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 const messageResultPoint = document.getElementById('message-result-point');
 const messageResultPointPC = document.getElementById('message-result-point-pc');
+const  Points = document.getElementById('points');
 
 let playerSelection;
 let computerSelection;
@@ -16,96 +17,100 @@ let x =0;
 let y=0;
 
 
-n=0;
-while(n < 4){
-  const images = [
-    {
-      name: "Rock",
-      url: "assets/piedra.png"
-    },
-    {
-      name: "Paper",
-      url: "assets/papel.png"
-    },
-    {
-      name: "Scissors",
-      url: "assets/tijera.png"
-    },
-  ];
+const images = [
+  {
+    name: "Rock",
+    url: "assets/piedra.png"
+  },
+  {
+    name: "Paper",
+    url: "assets/papel.png"
+  },
+  {
+    name: "Scissors",
+    url: "assets/tijera.png"
+  },
+];
 
-  function play(){
-    sectionBattle.style.display = 'none';
-  };
+function play(){
+  sectionBattle.style.display = 'none';
+};
 
-  rock.addEventListener('click', function(){
-    playerSelection = "Rock";
-    getComputerChoice();
-  });
+function end(){
+  Points.style.display = 'none';
+};
 
-  paper.addEventListener('click', function(){
-    playerSelection = "Paper";
-    getComputerChoice();
-  });
+rock.addEventListener('click', function(){
+  playerSelection = "Rock";
+  getComputerChoice();
+});
 
-  scissors.addEventListener('click', function(){
-    playerSelection = "Scissors";
-    getComputerChoice();
-  });
+paper.addEventListener('click', function(){
+  playerSelection = "Paper";
+  getComputerChoice();
+});
 
-  function getComputerChoice(){
-    let random = nRandom();
+scissors.addEventListener('click', function(){
+  playerSelection = "Scissors";
+  getComputerChoice();
+});
 
-    if(random == 0){
-      computerSelection = "Rock";
-    } else if (random == 1){
-      computerSelection = "Paper";
-    } else if (random == 2){
-      computerSelection = "Scissors"
-    }
-
-    battle();
-  };
-
-  function battle(){
-    if(playerSelection == computerSelection){
-      messageResult.innerHTML = "Tie";
-    } else if (playerSelection == "Rock" && computerSelection == "Scissors"){
-      messageResult.innerHTML = "Congrats! You win!";
-    } else if (playerSelection == "Paper" && computerSelection == "Rock"){
-      messageResult.innerHTML = "Congrats! You win!";
-    } else if (playerSelection == "Scissors" && computerSelection == "Paper"){
-      messageResult.innerHTML = "Congrats! You win!";
-    }else {
-      messageResult.innerHTML = "You missed";
-    };
-
-    addImages();
-  };
-
-  function nRandom(){
-    let n = Math.floor(Math.random()*3);
-    return n;
+function getComputerChoice(){
+let random = nRandom();
+  if(random == 0){
+    computerSelection = "Rock";
+  } else if (random == 1){
+    computerSelection = "Paper";
+  } else if (random == 2){
+    computerSelection = "Scissors"
   }
 
-  function addImages(){
-    for(let i=0; i<images.length; i++){
-      if(playerSelection == images[i].name){
-        img_player = images[i].url;
-        let insert = `<img class="img-battle" src=${img_player} alt="player-choice">`;
-        imgPlayer.innerHTML = insert;
-      };
+  battle();
+};
 
-      if(computerSelection == images[i].name){
-        img_pc = images[i].url;
-        let insert2 = `<img class="img-battle" src=${img_pc} alt="computer-choice">`;
-        imgPc.innerHTML = insert2;
-      };
-    };
-    sectionBattle.style.display = 'flex';
-
-    showPoints();
+function battle(){
+  if(playerSelection == computerSelection){
+    messageResult.innerHTML = "Tie";
+  } else if (playerSelection == "Rock" && computerSelection == "Scissors"){
+    messageResult.innerHTML = "Congrats! You win!";
+  } else if (playerSelection == "Paper" && computerSelection == "Rock"){
+    messageResult.innerHTML = "Congrats! You win!";
+  } else if (playerSelection == "Scissors" && computerSelection == "Paper"){
+    messageResult.innerHTML = "Congrats! You win!";
+  }else {
+    messageResult.innerHTML = "You missed";
   };
 
+  addImages();
+};
+
+function nRandom(){
+  let n = Math.floor(Math.random()*3);
+  return n;
+}
+
+function addImages(){
+  for(let i=0; i<images.length; i++){
+    if(playerSelection == images[i].name){
+      img_player = images[i].url;
+      let insert = `<img class="img-battle" src=${img_player} alt="player-choice">`;
+      imgPlayer.innerHTML = insert;
+    };
+
+    if(computerSelection == images[i].name){
+      img_pc = images[i].url;
+      let insert2 = `<img class="img-battle" src=${img_pc} alt="computer-choice">`;
+      imgPc.innerHTML = insert2;
+    };
+  };
+    
+  sectionBattle.style.display = 'flex';
+  
+  showPoints();
+};
+
+
+for(let i=0; i<4; i++){
   function showPoints(){
     if(playerSelection == computerSelection){
       messageResultPoint.innerHTML = x;
@@ -128,9 +133,10 @@ while(n < 4){
       messageResultPointPC.innerHTML = y;
     };
   };
-
+};
+  
   window.addEventListener('load', play);
 
-  n++;
-}
+
+
 
