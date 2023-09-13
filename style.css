@@ -114,3 +114,7 @@ img.img-battle{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 500;
 }
+
+@media screen and(min-width: 1024px){
+
+}
