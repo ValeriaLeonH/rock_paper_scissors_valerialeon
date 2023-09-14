@@ -132,9 +132,11 @@ for(let i=0; i<4; i++){
       messageResultPoint.innerHTML = x;
       messageResultPointPC.innerHTML = y;
     };
-  };
+  }; 
 };
-  
+
+
+
   window.addEventListener('load', play);
 
 
